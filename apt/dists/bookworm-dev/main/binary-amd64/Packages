@@ -1,3 +1,28 @@
+Package: python3-hiyapyco
+Source: python-hiyapyco
+Version: 0.7.0-2
+Architecture: all
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Installed-Size: 106
+Depends: python3-jinja2, python3-markupsafe, python3-yaml, python3:any
+Filename: pool/main/bookworm-dev/python3-hiyapyco_0.7.0-2_all.deb
+Size: 21728
+MD5sum: 353c3e0b3c68d3875a38cd6f69f593b9
+SHA1: d4b76cc4dfb975c26887b30d178cee7c5c0a694b
+SHA256: 992cf6c46e1d981023a4a4cc6312237bbc1884a1acaa59d589d8f3990785d5c1
+Section: python
+Priority: optional
+Homepage: https://github.com/zerwes/hiyapyco
+Description: Hierarchical YAML Python Config
+ A specialization of software often also requires a specialization of
+ the software's configuration. And properties between the general and
+ the specialized configuration may be shared, albeit overriden.
+ .
+ For a consistent view on such configuration data of arbitrary complexity,
+ this simple python lib allowing hierarchical overlay of config files in
+ YAML syntax, It offers different merge methods and variable interpolation
+ based on jinja2.
+
 Package: python3-qtpyvcp
 Source: qtpyvcp
 Version: 5.1.0-61.dev
