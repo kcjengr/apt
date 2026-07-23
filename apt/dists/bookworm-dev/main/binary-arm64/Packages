@@ -40,3 +40,20 @@ Priority: optional
 Homepage: https://qtpyvcp.com
 Description: QtPyVCP is a Qt and Python based framework for building virtual control panels for the LinuxCNC machine control.
 
+Package: python3-turbonc
+Source: turbonc
+Version: 0.4.9-4.dev
+Architecture: arm64
+Maintainer: TurBoss <j.l.toledano.l@gmail.com>
+Installed-Size: 34446
+Depends: python3:any (>= 3.11~), python3-setuptools, python3-yaml, python3-pyqt5, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-qtpy, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qttools5-dev-tools
+Filename: pool/main/bookworm-dev/python3-turbonc_0.4.9-4.dev_arm64.deb
+Size: 14253232
+MD5sum: 59073a2f8b9819dd47d50cb30943375a
+SHA1: b7be2b1975a33b4c80d30402f2fbcb739db9fb3f
+SHA256: 1c30a67b3a3c2ef5859ee134997f976a67770b0312b1281f77fa2a03b7f93422
+Section: cnc
+Priority: optional
+Homepage: https://qtpyvcp.com
+Description: TurBo NC is a QtPyVCP based interface for the LinuxCNC machine control
+
