@@ -50,3 +50,20 @@ Priority: optional
 Description: debug symbols for python3-qtpyvcp
 Build-Ids: fc92a2395e00bcea29e8159123089969cc4416bf
 
+Package: python3-turbonc
+Source: turbonc
+Version: 0.5.5-10.dev
+Architecture: amd64
+Maintainer: TurBoss <j.l.toledano.l@gmail.com>
+Installed-Size: 27387
+Depends: python3:any (>= 3.11~), python3-setuptools, python3-yaml, python3-qtpyvcp, python3-pyside6.qtcore, python3-pyside6.qtdbus, python3-pyside6.qtopengl, python3-pyside6.qtwidgets, python3-qtpy, python3-dbus, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval
+Filename: pool/main/trixie-dev/python3-turbonc_0.5.5-10.dev_amd64.deb
+Size: 14730596
+MD5sum: ebe49858736d7479a8b6dbfa32fdbc54
+SHA1: c30514db9f18247cae8e7d0ea25ced8d0327a1f6
+SHA256: 1b11bf6aff074aff8dddde2dc3f4e0792a35b3216466ce92aecc6aa17dba4007
+Section: cnc
+Priority: optional
+Homepage: https://qtpyvcp.com
+Description: TurBo NC is a QtPyVCP based interface for the LinuxCNC machine control
+
