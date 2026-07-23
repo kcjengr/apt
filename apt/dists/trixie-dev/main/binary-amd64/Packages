@@ -1,3 +1,20 @@
+Package: python3-monokrom
+Source: monokrom
+Version: 0.1-123.dev
+Architecture: amd64
+Maintainer: Joco <james@snaggingpixels.com>
+Installed-Size: 12861
+Depends: python3:any (>= 3.7~), python3-setuptools, python3-yaml, python3-pyqt5, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-qtpy, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qttools5-dev-tools
+Filename: pool/main/trixie-dev/python3-monokrom_0.1-123.dev_amd64.deb
+Size: 2236192
+MD5sum: 2c6b4386aac24979e684fd80005da472
+SHA1: 9d37af592b06ac2982bfdc87e9ae9189fc765147
+SHA256: 51c1495d233df3674961b9c2281a77c543b264cb4d573992dbc58076c4007080
+Section: cnc
+Priority: optional
+Homepage: https://qtpyvcp.com
+Description: Monochrome style VCPs for LinuxCNC controlled Plasma cutters.
+
 Package: python3-qtpyvcp
 Source: qtpyvcp
 Version: 6.0.3-71.dev
