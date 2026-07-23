@@ -1,0 +1,17 @@
+Package: python3-qtpyvcp
+Source: qtpyvcp
+Version: 5.1.0-61.dev
+Architecture: arm64
+Maintainer: Kcjengr <kcjengr@gmail.com>
+Installed-Size: 103967
+Depends: python3-pyqt5, python3-qtpy, python3:any (>= 3.7~), python3-setuptools, python3-hiyapyco, python3-yaml, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, python3-distro, qttools5-dev-tools
+Filename: pool/main/bookworm-dev/python3-qtpyvcp_5.1.0-61.dev_arm64.deb
+Size: 29166400
+MD5sum: 507a2066794f98e70606e339975a10a2
+SHA1: 5949b1130d0c441b702967fd2d2801a0d26d7b72
+SHA256: 61bcf2053629cb63236323a26d00e94ffe14f5d3efc8cb76ed1c946379f39bbc
+Section: cnc
+Priority: optional
+Homepage: https://qtpyvcp.com
+Description: QtPyVCP is a Qt and Python based framework for building virtual control panels for the LinuxCNC machine control.
+
