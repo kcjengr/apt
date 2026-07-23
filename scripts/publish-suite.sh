@@ -24,10 +24,10 @@ ARCHES=("$@")
 : "${GPG_KEY_ID:?GPG_KEY_ID must be set}"
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-DISTS_DIR="${REPO_ROOT}/dists/${DISTS_SUITE}"
-POOL_DIR="${REPO_ROOT}/pool/main/${POOL_SUITE}"
+DISTS_DIR="${REPO_ROOT}/apt/dists/${DISTS_SUITE}"
+POOL_DIR="${REPO_ROOT}/apt/pool/main/${POOL_SUITE}"
 
-cd "${REPO_ROOT}"
+cd "${REPO_ROOT}/apt"
 
 for ARCH in "${ARCHES[@]}"; do
     mkdir -p "${DISTS_DIR}/main/binary-${ARCH}"
