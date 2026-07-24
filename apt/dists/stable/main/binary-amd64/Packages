@@ -25,16 +25,16 @@ Description: Hierarchical YAML Python Config
 
 Package: python3-probe-basic
 Source: probe-basic
-Version: 0.6.7
+Version: 0.6.8
 Architecture: amd64
 Maintainer: Kcjengr <kcjengr@gmail.com>
 Installed-Size: 65475
 Depends: python3:any (>= 3.7~), python3-setuptools, python3-qtpyvcp, qml-module-qtquick-controls, qml-module-qtquick-layouts, python3-yaml, python3-pyqt5, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-qtpy, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qml-module-qtquick-controls2, qml-module-qtquick2, qmlscene
-Filename: pool/main/bookworm/python3-probe-basic_0.6.7_amd64.deb
-Size: 19738840
-MD5sum: ddc3e84920589dc234836972fe425f85
-SHA1: e75eb951d761e05a506506fed543527a1929a818
-SHA256: e5dae12a44b36f5fbb7906f26064b46740c3b87545400e8d8a9f3347c1cf9a33
+Filename: pool/main/bookworm/python3-probe-basic_0.6.8_amd64.deb
+Size: 20014720
+MD5sum: 0f37fe4f5aaa101f42c36b5c0518461b
+SHA1: 5fbffd4638b3b62d8ddab70b3092a11805ecaab1
+SHA256: b20ac449970bb391712cf6a0c8839c139ebc4dbe8c5604ad3d0dea319026fe60
 Section: cnc
 Priority: optional
 Homepage: https://github.com/kcjengr/probe-basic
