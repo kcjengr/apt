@@ -66,10 +66,10 @@ Maintainer: Kcjengr <kcjengr@gmail.com>
 Installed-Size: 103967
 Depends: python3-pyqt5, python3-qtpy, python3:any (>= 3.7~), python3-setuptools, python3-hiyapyco, python3-yaml, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, python3-distro, qttools5-dev-tools
 Filename: pool/main/bookworm-dev/python3-qtpyvcp_5.1.0-62.dev_arm64.deb
-Size: 29197320
-MD5sum: 51dc6c856df15884364899b4cd98c0bc
-SHA1: dbd38500aebc5ecb0f65a4bc06385c5c60aef258
-SHA256: c46bbe3e22da72374f46c71157e81a0d91bab20fe72dcc22ec5e6626c4f55f4a
+Size: 29168000
+MD5sum: 6f48d3f619617e70c92431103d22de79
+SHA1: 1c48bc1ce4454db2667196a350bc739ce7920273
+SHA256: 2b2a8eab4bd0d0c3a98cb12aabb75ec142358c86642a68d0bb98ff7abb4b1e28
 Section: cnc
 Priority: optional
 Homepage: https://qtpyvcp.com
