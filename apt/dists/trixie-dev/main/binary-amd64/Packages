@@ -23,10 +23,10 @@ Maintainer: Kcjengr <kcjengr@gmail.com>
 Installed-Size: 62972
 Depends: python3-qtpy, python3:any (>= 3.7~), python3-setuptools, python3-qtpyvcp, qml6-module-qtquick-controls, qml6-module-qtquick-layouts, qml6-module-qtquick, python3-yaml, python3-pyside6.qtcore, python3-pyside6.qtdbus, python3-pyside6.qtopengl, python3-pyside6.qtwidgets, python3-pyside6.qtquick, pyside6-tools, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qmlscene
 Filename: pool/main/trixie-dev/python3-probe-basic_1.0.1-88.dev_amd64.deb
-Size: 19446372
-MD5sum: dbef77a91ed07f29ab56ff82f1ae6031
-SHA1: 43ea9ecbb83ff7a561deecd4be2dcce8c094cdaa
-SHA256: a6aa59f678ceb83bc15618ed8d011171551f1be554606b4ff11904186f88d5ea
+Size: 19429476
+MD5sum: 4975a1ec825aa24af2b7e4ae24af7a4a
+SHA1: c0f64970ad7eaebdee0e71e6581dec070f68565f
+SHA256: a25fa9158309c779f0e8b087b299106cac7d8611398cd7634097d169048277e2
 Section: cnc
 Priority: optional
 Homepage: https://github.com/kcjengr/probe-basic
