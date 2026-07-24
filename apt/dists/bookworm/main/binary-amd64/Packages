@@ -23,6 +23,24 @@ Description: Hierarchical YAML Python Config
  YAML syntax, It offers different merge methods and variable interpolation
  based on jinja2.
 
+Package: python3-probe-basic
+Source: probe-basic
+Version: 0.6.7
+Architecture: amd64
+Maintainer: Kcjengr <kcjengr@gmail.com>
+Installed-Size: 65475
+Depends: python3:any (>= 3.7~), python3-setuptools, python3-qtpyvcp, qml-module-qtquick-controls, qml-module-qtquick-layouts, python3-yaml, python3-pyqt5, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-qtpy, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qml-module-qtquick-controls2, qml-module-qtquick2, qmlscene
+Filename: pool/main/bookworm/python3-probe-basic_0.6.7_amd64.deb
+Size: 19738840
+MD5sum: ddc3e84920589dc234836972fe425f85
+SHA1: e75eb951d761e05a506506fed543527a1929a818
+SHA256: e5dae12a44b36f5fbb7906f26064b46740c3b87545400e8d8a9f3347c1cf9a33
+Section: cnc
+Priority: optional
+Homepage: https://github.com/kcjengr/probe-basic
+Description: probe-basic is a virtual control panel user interface for LinuxCNC machine control.
+Python3-Extension: postinst
+
 Package: python3-qtpyvcp
 Source: qtpyvcp
 Version: 5.1.1
