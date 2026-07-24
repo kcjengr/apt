@@ -77,16 +77,16 @@ Description: QtPyVCP is a Qt and Python based framework for building virtual con
 
 Package: python3-turbonc
 Source: turbonc
-Version: 0.4.9-7.dev
+Version: 0.4.9-8.dev
 Architecture: amd64
 Maintainer: TurBoss <j.l.toledano.l@gmail.com>
 Installed-Size: 34446
 Depends: python3:any (>= 3.11~), python3-setuptools, python3-yaml, python3-pyqt5, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-qtpy, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qttools5-dev-tools
-Filename: pool/main/bookworm-dev/python3-turbonc_0.4.9-7.dev_amd64.deb
-Size: 14254756
-MD5sum: 80e912c14bf9dc243fd22bcaa6386414
-SHA1: 208594899c4c93dd3aaa927986244ab2bd4ec284
-SHA256: a729617ec29b4eb90654eca78fc689133f62fc24355f961e0cde684797b3efdb
+Filename: pool/main/bookworm-dev/python3-turbonc_0.4.9-8.dev_amd64.deb
+Size: 14240752
+MD5sum: 72b2c2b5e8bbfd93974297b891b26ffc
+SHA1: 25279744e75dce3c14ca12647741f6535291fb6b
+SHA256: c5751b1336d5e6bd060f6f54e9881478773bb02349fc9b58e9af2299bfc049a7
 Section: cnc
 Priority: optional
 Homepage: https://qtpyvcp.com
