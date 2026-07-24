@@ -1,15 +1,15 @@
 Package: python3-qtpyvcp
 Source: qtpyvcp
-Version: 6.0.4
+Version: 6.0.5
 Architecture: arm64
 Maintainer: Kcjengr <kcjengr@gmail.com>
 Installed-Size: 105331
 Depends: python3 (<< 3.14), python3 (>= 3.13~), python3-qtpy, python3:any (>= 3.7~), libc6 (>= 2.34), libgcc-s1 (>= 3.3.1), libqt6core6t64 (>= 6.8.2), libqt6gui6 (>= 6.1.2), libqt6widgets6 (>= 6.1.2), libstdc++6 (>= 14), python3-setuptools, python3-hiyapyco, python3-yaml, python3-pyside6.qtcore, python3-pyside6.qtdbus, python3-pyside6.qtdesigner, python3-pyside6.qtopengl, python3-pyside6.qtwidgets, python3-pyside6.qtquick, python3-pyside6.qtuitools, pyside6-tools, python3-pyside6.qsci | python3-pyqt5.qsci, qml6-module-qtquick-controls, qml6-module-qtquick-layouts, qml6-module-qtquick, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, python3-distro, qt6-base-dev-tools
-Filename: pool/main/trixie/python3-qtpyvcp_6.0.4_arm64.deb
-Size: 29823724
-MD5sum: 540e95b3d5510abf9d3a7ab1797fa393
-SHA1: fefadf0a951a640543ba26f10a43cea5f099efb0
-SHA256: faafa91fd3f53c4d4e270a436f386b2497efc0580c49d3c818ee11445a052001
+Filename: pool/main/trixie/python3-qtpyvcp_6.0.5_arm64.deb
+Size: 29823480
+MD5sum: 8bb54738c7355c5cbb84e66ce529fde6
+SHA1: 8a031eaacd38e9c2c2e148e3be76934bb1ed9089
+SHA256: 166e7d63f54fa3dd70b7ac73d45b56aceac480dff721764e8f447f6bfa529eae
 Section: cnc
 Priority: optional
 Homepage: https://qtpyvcp.com
@@ -17,17 +17,17 @@ Description: QtPyVCP is a Qt and Python based framework for building virtual con
 
 Package: python3-qtpyvcp-dbgsym
 Source: qtpyvcp
-Version: 6.0.4
+Version: 6.0.5
 Auto-Built-Package: debug-symbols
 Architecture: arm64
 Maintainer: Kcjengr <kcjengr@gmail.com>
 Installed-Size: 1556
-Depends: python3-qtpyvcp (= 6.0.4)
-Filename: pool/main/trixie/python3-qtpyvcp-dbgsym_6.0.4_arm64.deb
+Depends: python3-qtpyvcp (= 6.0.5)
+Filename: pool/main/trixie/python3-qtpyvcp-dbgsym_6.0.5_arm64.deb
 Size: 1539184
-MD5sum: d925c0a0a9a5d52e4e3b01c50ddfc713
-SHA1: 68881acbf2c72cae096dea54ef273a32d519cc24
-SHA256: 33ea9e6f817b13bf451c71266fed6faca9d46ac155b2349518d95db17f2983a4
+MD5sum: ca72155358034b41dba5909526b29fc0
+SHA1: 80794e103505ebaab258d4804559e76805ff671a
+SHA256: 433200147ca913986ad00d079d1ad1563b67a79c36fcbd43551c8fb4df007bf8
 Section: debug
 Priority: optional
 Description: debug symbols for python3-qtpyvcp
