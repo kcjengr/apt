@@ -1,3 +1,21 @@
+Package: python3-probe-basic
+Source: probe-basic
+Version: 1.0.2
+Architecture: arm64
+Maintainer: Kcjengr <kcjengr@gmail.com>
+Installed-Size: 62972
+Depends: python3-qtpy, python3:any (>= 3.7~), python3-setuptools, python3-qtpyvcp, qml6-module-qtquick-controls, qml6-module-qtquick-layouts, qml6-module-qtquick, python3-yaml, python3-pyside6.qtcore, python3-pyside6.qtdbus, python3-pyside6.qtopengl, python3-pyside6.qtwidgets, python3-pyside6.qtquick, pyside6-tools, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qmlscene
+Filename: pool/main/trixie/python3-probe-basic_1.0.2_arm64.deb
+Size: 19446396
+MD5sum: b061bd338f49608c00e17bcb72999c15
+SHA1: 5b78e2801641e70ed78544393f085378c4df80ff
+SHA256: 5b7dbbdc6295d3aea170faa5aba97125da6f477c5e1e929c9d3a1b6b6d582e9e
+Section: cnc
+Priority: optional
+Homepage: https://github.com/kcjengr/probe-basic
+Description: probe-basic is a virtual control panel user interface for LinuxCNC machine control.
+Python3-Extension: postinst
+
 Package: python3-qtpyvcp
 Source: qtpyvcp
 Version: 6.0.5
