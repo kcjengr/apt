@@ -23,6 +23,23 @@ Description: Hierarchical YAML Python Config
  YAML syntax, It offers different merge methods and variable interpolation
  based on jinja2.
 
+Package: python3-monokrom
+Source: monokrom
+Version: 0.1.1
+Architecture: arm64
+Maintainer: Joco <james@snaggingpixels.com>
+Installed-Size: 13263
+Depends: python3:any (>= 3.7~), python3-setuptools, python3-yaml, python3-pyqt5, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-qtpy, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qttools5-dev-tools
+Filename: pool/main/bookworm/python3-monokrom_0.1.1_arm64.deb
+Size: 2196176
+MD5sum: 6c282d00669374ebe154256d7d2517c1
+SHA1: bb33d074834e3ee7746ee481a2194ad45b394e14
+SHA256: 56ef8c81ca2d548e77fb255d1ee853f00950ba2190f9be92d090ce115a15b770
+Section: cnc
+Priority: optional
+Homepage: https://qtpyvcp.com
+Description: Monochrome style VCPs for LinuxCNC controlled Plasma cutters.
+
 Package: python3-probe-basic
 Source: probe-basic
 Version: 0.6.8
