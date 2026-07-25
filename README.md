@@ -10,14 +10,32 @@
 | [monokrom](https://github.com/kcjengr/monokrom) | [![](https://github.com/kcjengr/monokrom/actions/workflows/release-stable-bookworm.yml/badge.svg)](https://github.com/kcjengr/monokrom/actions/workflows/release-stable-bookworm.yml) | [![](https://github.com/kcjengr/monokrom/actions/workflows/release-dev.yml/badge.svg?branch=main)](https://github.com/kcjengr/monokrom/actions/workflows/release-dev.yml?query=branch%3Amain) | [![](https://github.com/kcjengr/monokrom/actions/workflows/release-stable-trixie.yml/badge.svg)](https://github.com/kcjengr/monokrom/actions/workflows/release-stable-trixie.yml) | [![](https://github.com/kcjengr/monokrom/actions/workflows/release-dev.yml/badge.svg?branch=pyside6)](https://github.com/kcjengr/monokrom/actions/workflows/release-dev.yml?query=branch%3Apyside6) |
 
 Each badge is live (auto-updates) and links straight to that workflow's run
-history. `stable` columns won't show a real result until the next version
-tag is pushed on that project — they've been wired up but not exercised yet.
+history.
 
 Debian package repository for [qtpyvcp](https://github.com/kcjengr/qtpyvcp),
 [probe_basic](https://github.com/kcjengr/probe_basic),
 [turbonc](https://github.com/kcjengr/turbonc), and
 [monokrom](https://github.com/kcjengr/monokrom), served via GitHub Pages at
 `repository.qtpyvcp.com`.
+
+## Installing
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/kcjengr/apt/main/install.sh | sudo sh
+```
+
+Detects your machine's actual Debian release (`bookworm` or `trixie`) from
+`/etc/os-release` and adds the matching suite automatically — this avoids
+manually adding the wrong suite by hand (e.g. a `bookworm` source on a
+`trixie` machine, which apt won't stop you from doing and can pull in
+ABI-incompatible packages). Add `-- --dev` for the continuous dev suite
+instead of the latest stable release:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/kcjengr/apt/main/install.sh | sudo sh -s -- --dev
+```
+
+Then install packages as usual, e.g. `apt-get install python3-qtpyvcp python3-probe-basic`.
 
 The served apt tree lives under `apt/` (`apt/dists/`, `apt/pool/`) — **not**
 the repo root — because every existing install's `sources.list` points at
