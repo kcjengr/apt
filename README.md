@@ -12,6 +12,12 @@
 Each badge is live (auto-updates) and links straight to that workflow's run
 history.
 
+**[Live status page →](https://repository.qtpyvcp.com/status.html)** — shows
+**yellow while a build is running**, green when it passed and red when it
+failed. The badges above cannot do that: GitHub only regenerates a badge once
+a run *finishes*, so a build in progress still shows the previous result. The
+status page reads the GitHub API directly and refreshes on its own.
+
 Debian package repository for [qtpyvcp](https://github.com/kcjengr/qtpyvcp),
 [probe_basic](https://github.com/kcjengr/probe_basic),
 [turbonc](https://github.com/kcjengr/turbonc), and

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kcjengr build status</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --line: #d1d9e0;
+    --card: #f6f8fa;
+    --green: #1a7f37; --red: #cf222e; --yellow: #9a6700; --grey: #656d76;
+    --green-bg: #dafbe1; --red-bg: #ffebe9; --yellow-bg: #fff8c5; --grey-bg: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117; --fg: #e6edf3; --muted: #8d96a0; --line: #30363d;
+      --card: #161b22;
+      --green: #3fb950; --red: #f85149; --yellow: #d29922; --grey: #8d96a0;
+      --green-bg: #12261e; --red-bg: #25171c; --yellow-bg: #272115; --grey-bg: #161b22;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2rem 1rem; background: var(--bg); color: var(--fg);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
+  .sub { color: var(--muted); margin: 0 0 1.5rem; font-size: .9rem; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; }
+  th, td { padding: .6rem .7rem; text-align: left; border-bottom: 1px solid var(--line); }
+  th { font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); font-weight: 600; }
+  td.project { font-weight: 600; white-space: nowrap; }
+  td.project a { color: inherit; text-decoration: none; }
+  td.project a:hover { text-decoration: underline; }
+  .pill {
+    display: inline-flex; align-items: center; gap: .4rem;
+    padding: .2rem .6rem; border-radius: 999px; font-size: .82rem;
+    font-weight: 600; text-decoration: none; white-space: nowrap;
+  }
+  .dot { width: .55rem; height: .55rem; border-radius: 50%; flex: none; }
+  .success  { background: var(--green-bg);  color: var(--green); }
+  .success  .dot { background: var(--green); }
+  .failure  { background: var(--red-bg);    color: var(--red); }
+  .failure  .dot { background: var(--red); }
+  .running  { background: var(--yellow-bg); color: var(--yellow); }
+  .running  .dot { background: var(--yellow); animation: pulse 1.1s ease-in-out infinite; }
+  .unknown  { background: var(--grey-bg);   color: var(--grey); border: 1px solid var(--line); }
+  .unknown  .dot { background: var(--grey); }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+  @media (prefers-reduced-motion: reduce) { .running .dot { animation: none; } }
+  footer { margin-top: 1.5rem; color: var(--muted); font-size: .85rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  button {
+    font: inherit; color: var(--fg); background: var(--card);
+    border: 1px solid var(--line); border-radius: 6px; padding: .3rem .7rem; cursor: pointer;
+  }
+  button:hover { border-color: var(--muted); }
+  .err { color: var(--red); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>kcjengr build status</h1>
+  <p class="sub">
+    Live status of the package builds that publish to
+    <code>repository.qtpyvcp.com</code>. Yellow means a build is running right
+    now, green passed, red failed. Updates automatically.
+  </p>
+
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>bookworm (stable)</th>
+          <th>bookworm-dev</th>
+          <th>trixie (stable)</th>
+          <th>trixie-dev</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    <span id="updated">Loading…</span>
+    <button id="refresh" type="button">Refresh now</button>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var OWNER = "kcjengr";
+  var REPOS = ["qtpyvcp", "probe_basic", "turbonc", "monokrom"];
+
+  // Each column is one workflow file; the dev workflow exists on both
+  // branches, so the branch is what tells the two dev suites apart. Stable
+  // builds run from tags, so their branch varies and isn't filtered on.
+  var COLUMNS = [
+    { file: "release-stable-bookworm.yml", branch: null },
+    { file: "release-dev.yml",             branch: "main" },
+    { file: "release-stable-trixie.yml",   branch: null },
+    { file: "release-dev.yml",             branch: "pyside6" }
+  ];
+
+  var REFRESH_MS = 60000;
+  var timer = null;
+
+  function classFor(run) {
+    if (!run) return "unknown";
+    if (run.status !== "completed") return "running";
+    if (run.conclusion === "success") return "success";
+    if (run.conclusion === "failure" || run.conclusion === "timed_out") return "failure";
+    return "unknown";
+  }
+
+  function labelFor(run) {
+    if (!run) return "no runs";
+    if (run.status === "queued" || run.status === "waiting") return "queued";
+    if (run.status !== "completed") return "building";
+    return run.conclusion ? run.conclusion.replace(/_/g, " ") : "unknown";
+  }
+
+  function pick(runs, col) {
+    var best = null;
+    for (var i = 0; i < runs.length; i++) {
+      var r = runs[i];
+      if (!r.path || r.path.indexOf(col.file) === -1) continue;
+      if (col.branch && r.head_branch !== col.branch) continue;
+      // A run that is still going always wins, so an in-flight build shows
+      // as yellow even though a newer completed run may exist for a
+      // different trigger.
+      if (r.status !== "completed") return r;
+      if (!best || new Date(r.created_at) > new Date(best.created_at)) best = r;
+    }
+    return best;
+  }
+
+  function cell(run, repo) {
+    var td = document.createElement("td");
+    var cls = classFor(run);
+    var el = document.createElement(run ? "a" : "span");
+    el.className = "pill " + cls;
+    if (run) {
+      el.href = run.html_url;
+      el.target = "_blank";
+      el.rel = "noopener";
+      el.title = (run.display_title || "") + " — " + new Date(run.created_at).toLocaleString();
+    }
+    var dot = document.createElement("span");
+    dot.className = "dot";
+    el.appendChild(dot);
+    el.appendChild(document.createTextNode(labelFor(run)));
+    td.appendChild(el);
+    return td;
+  }
+
+  function render(data) {
+    var tbody = document.getElementById("rows");
+    tbody.textContent = "";
+    REPOS.forEach(function (repo) {
+      var tr = document.createElement("tr");
+      var name = document.createElement("td");
+      name.className = "project";
+      var a = document.createElement("a");
+      a.href = "https://github.com/" + OWNER + "/" + repo;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = repo;
+      name.appendChild(a);
+      tr.appendChild(name);
+
+      var runs = data[repo] || [];
+      COLUMNS.forEach(function (col) {
+        tr.appendChild(cell(pick(runs, col), repo));
+      });
+      tbody.appendChild(tr);
+    });
+  }
+
+  function load() {
+    var status = document.getElementById("updated");
+    status.className = "";
+    status.textContent = "Checking…";
+
+    Promise.all(REPOS.map(function (repo) {
+      return fetch("https://api.github.com/repos/" + OWNER + "/" + repo +
+                   "/actions/runs?per_page=60")
+        .then(function (r) {
+          if (r.status === 403) throw new Error("rate-limited");
+          if (!r.ok) throw new Error(repo + ": HTTP " + r.status);
+          return r.json();
+        })
+        .then(function (j) { return [repo, j.workflow_runs || []]; });
+    })).then(function (pairs) {
+      var data = {};
+      pairs.forEach(function (p) { data[p[0]] = p[1]; });
+      render(data);
+      status.textContent = "Updated " + new Date().toLocaleTimeString();
+    }).catch(function (e) {
+      status.className = "err";
+      status.textContent = e.message === "rate-limited"
+        ? "GitHub rate limit reached — this page polls anonymously, so it will resume shortly."
+        : "Could not load status: " + e.message;
+    });
+  }
+
+  function schedule() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(function () {
+      if (!document.hidden) load();
+    }, REFRESH_MS);
+  }
+
+  document.getElementById("refresh").addEventListener("click", load);
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) load();
+  });
+
+  load();
+  schedule();
+})();
+</script>
+</body>
+</html>
