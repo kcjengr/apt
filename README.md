@@ -18,24 +18,42 @@ Debian package repository for [qtpyvcp](https://github.com/kcjengr/qtpyvcp),
 [monokrom](https://github.com/kcjengr/monokrom), served via GitHub Pages at
 `repository.qtpyvcp.com`.
 
-## Installing
+## Installing (and fixing a broken install)
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/kcjengr/apt/main/install.sh | sudo sh
+curl -fsSL https://repository.qtpyvcp.com/install.sh | sudo sh
 ```
 
-Detects your machine's actual Debian release (`bookworm` or `trixie`) from
-`/etc/os-release` and adds the matching suite automatically — this avoids
-manually adding the wrong suite by hand (e.g. a `bookworm` source on a
-`trixie` machine, which apt won't stop you from doing and can pull in
-ABI-incompatible packages). Add `-- --dev` for the continuous dev suite
-instead of the latest stable release:
+Run this to set the repo up for the first time **or** to repair an existing
+machine. Then install packages as usual, e.g.
+`apt-get install python3-qtpyvcp python3-probe-basic`.
 
-```sh
-curl -fsSL https://raw.githubusercontent.com/kcjengr/apt/main/install.sh | sudo sh -s -- --dev
+It detects your Debian release (`bookworm` or `trixie`) from
+`/etc/os-release` and configures the matching suite, so the wrong suite
+can't be added by hand — e.g. a `bookworm` suite such as `develop` left on
+a `trixie` machine, which apt will happily use and which can pull in
+ABI-incompatible packages.
+
+Your existing stable/dev channel is detected and kept. Force one with
+`| sudo sh -s -- --dev` or `| sudo sh -s -- --stable`.
+
+### "Missing key ... / the repository is not signed"
+
+If `apt update` reports:
+
+```
+Missing key 50F874571F20C5B0BA225E2F0CDFCCE0388CFA48, which is needed to verify signature.
+E: The repository '...' is not signed.
 ```
 
-Then install packages as usual, e.g. `apt-get install python3-qtpyvcp python3-probe-basic`.
+run the command above — it installs the current signing key and repairs the
+source line. Any previous apt source for this repository is retired to a
+`.disabled` file rather than deleted.
+
+Note that just adding the key to `/etc/apt/trusted.gpg.d/` is **not** always
+enough: if the old source line carries a `signed-by=` pointing at a stale
+keyring, that keyring takes precedence and the error persists. The script
+handles that case by refreshing the keyring the source actually references.
 
 The served apt tree lives under `apt/` (`apt/dists/`, `apt/pool/`) — **not**
 the repo root — because every existing install's `sources.list` points at
