@@ -34,8 +34,9 @@ can't be added by hand — e.g. a `bookworm` suite such as `develop` left on
 a `trixie` machine, which apt will happily use and which can pull in
 ABI-incompatible packages.
 
-Your existing stable/dev channel is detected and kept. Force one with
-`| sudo sh -s -- --dev` or `| sudo sh -s -- --stable`.
+This installs the **develop** channel, which is the channel to use. The
+`stable` suites exist and are built, but are not release-ready — don't
+point users at them.
 
 ### "Missing key ... / the repository is not signed"
 

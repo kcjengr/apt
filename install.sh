@@ -58,13 +58,11 @@ case "$1" in
 esac
 
 if [ -z "$CHANNEL" ]; then
-  CHANNEL="stable"
-  for f in $OLD_FILES; do
-    # "develop", "bookworm-dev" and "trixie-dev" are all dev-channel suites.
-    if grep -Eqi '(^|[[:space:]])(develop|bookworm-dev|trixie-dev)([[:space:]]|$)' "$f" 2>/dev/null; then
-      CHANNEL="dev"
-    fi
-  done
+  # Always the dev channel unless --stable is passed explicitly. The
+  # stable suites are published but are NOT release-ready for users, so
+  # nothing here may put a machine on them by inference -- a machine that
+  # somehow ended up on stable gets moved back to dev by running this.
+  CHANNEL="dev"
 fi
 
 if [ "$CHANNEL" = "dev" ]; then
