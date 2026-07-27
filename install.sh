@@ -29,11 +29,19 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
-CODENAME="$(. /etc/os-release && echo "$VERSION_CODENAME")"
+# Debian derivatives use their own VERSION_CODENAME but report the Debian
+# release they are built from in DEBIAN_CODENAME -- LMDE 7 for example is
+# VERSION_CODENAME=gigi, DEBIAN_CODENAME=trixie. Prefer the Debian codename
+# so those systems get the right suite instead of being rejected.
+CODENAME="$(. /etc/os-release && echo "${DEBIAN_CODENAME:-$VERSION_CODENAME}")"
+PRETTY="$(. /etc/os-release && echo "${PRETTY_NAME:-$CODENAME}")"
 case "$CODENAME" in
   bookworm|trixie) ;;
   *)
-    echo "Unsupported Debian release '$CODENAME' -- only bookworm (PyQt5) and trixie (PySide6) are published." >&2
+    echo "Unsupported release: $PRETTY (detected Debian codename '$CODENAME')." >&2
+    echo "Only bookworm (PyQt5) and trixie (PySide6) are published." >&2
+    echo "If this is a Debian-based distribution built on bookworm or trixie," >&2
+    echo "please report it so it can be detected properly." >&2
     exit 1
     ;;
 esac
