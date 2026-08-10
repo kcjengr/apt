@@ -35,16 +35,16 @@ Python3-Extension: postinst
 
 Package: python3-qtpyvcp
 Source: qtpyvcp
-Version: 6.0.6-21.dev
+Version: 6.0.6-22.dev
 Architecture: amd64
 Maintainer: Kcjengr <kcjengr@gmail.com>
-Installed-Size: 105271
+Installed-Size: 105276
 Depends: python3 (<< 3.14), python3 (>= 3.13~), python3-qtpy, python3:any (>= 3.7~), libc6 (>= 2.34), libgcc-s1 (>= 3.3.1), libqt6core6t64 (>= 6.8.2), libqt6gui6 (>= 6.1.2), libqt6widgets6 (>= 6.1.2), libstdc++6 (>= 14), python3-setuptools, python3-hiyapyco, python3-yaml, python3-pyside6.qtcore, python3-pyside6.qtdbus, python3-pyside6.qtdesigner, python3-pyside6.qtopengl, python3-pyside6.qtwidgets, python3-pyside6.qtquick, python3-pyside6.qtuitools, pyside6-tools, python3-pyside6.qsci | python3-pyqt5.qsci, qml6-module-qtquick-controls, qml6-module-qtquick-layouts, qml6-module-qtquick, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, python3-distro, qt6-base-dev-tools
-Filename: pool/main/trixie-dev/python3-qtpyvcp_6.0.6-21.dev_amd64.deb
-Size: 29831152
-MD5sum: 2f11167d9a425d931f5f59b4c7a98864
-SHA1: 60e90110156ea91206a6282dd960c552960f49a1
-SHA256: 54aa82c86b6eab91535f573996efd3422f11d50b0c186d6e6121359866dc478e
+Filename: pool/main/trixie-dev/python3-qtpyvcp_6.0.6-22.dev_amd64.deb
+Size: 29843792
+MD5sum: f3000529ba4c8d5efc77d6783f732ea2
+SHA1: a44387d4bcc0834baaf9f1ecff8156f3bbee641a
+SHA256: fe19bf0dc5f2c5f984ba8c993457824000c774184a41175804ede3e6a5b63677
 Section: cnc
 Priority: optional
 Homepage: https://qtpyvcp.com
@@ -52,17 +52,17 @@ Description: QtPyVCP is a Qt and Python based framework for building virtual con
 
 Package: python3-qtpyvcp-dbgsym
 Source: qtpyvcp
-Version: 6.0.6-21.dev
+Version: 6.0.6-22.dev
 Auto-Built-Package: debug-symbols
 Architecture: amd64
 Maintainer: Kcjengr <kcjengr@gmail.com>
 Installed-Size: 1566
-Depends: python3-qtpyvcp (= 6.0.6-21.dev)
-Filename: pool/main/trixie-dev/python3-qtpyvcp-dbgsym_6.0.6-21.dev_amd64.deb
+Depends: python3-qtpyvcp (= 6.0.6-22.dev)
+Filename: pool/main/trixie-dev/python3-qtpyvcp-dbgsym_6.0.6-22.dev_amd64.deb
 Size: 1550168
-MD5sum: 8226706cd97b9728870004cfa0f31420
-SHA1: 130fa72aa37090d1fd055417ae89daee25c56775
-SHA256: 35e271fa509b38f7a98b906ed0fa7b8fa1e2268e359aee2e6b76e82144f09e4f
+MD5sum: 7cdbe2dad5ed141cfbebc32dbff0e2cb
+SHA1: 586e1923069f43530eb59abb42e4753254242768
+SHA256: 3403eba5e909cab3468c5278ad079318b11a0a56601cc67eecc6c0e547178bec
 Section: debug
 Priority: optional
 Description: debug symbols for python3-qtpyvcp
