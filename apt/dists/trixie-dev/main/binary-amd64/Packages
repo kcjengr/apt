@@ -70,16 +70,16 @@ Build-Ids: d7672889718dc5e619d96c538644a60430f39233
 
 Package: python3-turbonc
 Source: turbonc
-Version: 0.5.7-1.dev
+Version: 0.5.7-3.dev
 Architecture: amd64
 Maintainer: TurBoss <j.l.toledano.l@gmail.com>
-Installed-Size: 27398
+Installed-Size: 33228
 Depends: python3:any (>= 3.11~), python3-setuptools, python3-yaml, python3-qtpyvcp, python3-pyside6.qtcore, python3-pyside6.qtdbus, python3-pyside6.qtopengl, python3-pyside6.qtwidgets, python3-qtpy, python3-dbus, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval
-Filename: pool/main/trixie-dev/python3-turbonc_0.5.7-1.dev_amd64.deb
-Size: 14733712
-MD5sum: 236d960990ccde3b28a0a3c8bd34a2cb
-SHA1: 8c8f8562fcb34363779487f9af088866352e2799
-SHA256: 22047bb7aa8e564fdf516dbcdcd267815fed475e6c9778849b58b51d50f0510f
+Filename: pool/main/trixie-dev/python3-turbonc_0.5.7-3.dev_amd64.deb
+Size: 20248044
+MD5sum: b6eb6903482233a09bbef8a29d815088
+SHA1: f6576e4dae30eb9e8eeed6220b329e23b2ba76a3
+SHA256: ef9ea83763eeb2c62bb2ca11e5b147dbd9159b8abb0e881dd1ede7ed3d7f4e2f
 Section: cnc
 Priority: optional
 Homepage: https://qtpyvcp.com
