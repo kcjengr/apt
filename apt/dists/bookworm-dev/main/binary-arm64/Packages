@@ -60,16 +60,16 @@ Python3-Extension: postinst
 
 Package: python3-qtpyvcp
 Source: qtpyvcp
-Version: 5.1.2-6.dev
+Version: 5.1.2-7.dev
 Architecture: arm64
 Maintainer: Kcjengr <kcjengr@gmail.com>
-Installed-Size: 103968
+Installed-Size: 103980
 Depends: python3-pyqt5, python3-qtpy, python3:any (>= 3.7~), python3-setuptools, python3-hiyapyco, python3-yaml, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, python3-distro, qttools5-dev-tools
-Filename: pool/main/bookworm-dev/python3-qtpyvcp_5.1.2-6.dev_arm64.deb
-Size: 29163884
-MD5sum: 75c720a05504ed553e23cd2b1ef8970b
-SHA1: f3cfaebc417d749ceca3488a2b80fd93306d8ddc
-SHA256: df1a4ecd2932cc953e9253faba896be6b5a56ffc3335630aa5826aa043343b8c
+Filename: pool/main/bookworm-dev/python3-qtpyvcp_5.1.2-7.dev_arm64.deb
+Size: 29198956
+MD5sum: 6038681e1030b11d31adff609bb52cb7
+SHA1: e0fd27004f277018ed6c7fe88834eb03666f64ad
+SHA256: c8decee93d68cedf4761bdcb9f8bf0e2aefa2e4fa52ba22c9bff598470c8c517
 Section: cnc
 Priority: optional
 Homepage: https://qtpyvcp.com
