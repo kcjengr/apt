@@ -1,15 +1,15 @@
 Package: python3-monokrom
 Source: monokrom
-Version: 0.1.2-43.dev
+Version: 0.1.2-44.dev
 Architecture: arm64
 Maintainer: Joco <james@snaggingpixels.com>
-Installed-Size: 13120
+Installed-Size: 13119
 Depends: python3:any (>= 3.7~), python3-setuptools, python3-yaml, python3-pyqt5, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-qtpy, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qttools5-dev-tools
-Filename: pool/main/trixie-dev/python3-monokrom_0.1.2-43.dev_arm64.deb
-Size: 2258064
-MD5sum: e8d98ac94dd9333e0f927b801da53106
-SHA1: 8056e0e93e56fe7c429881e3bd4f2961ef1f78de
-SHA256: 237fbeb347856f0eff69b0bff0820e28009c12f41542e6b18af3ebd1cc6dc1d0
+Filename: pool/main/trixie-dev/python3-monokrom_0.1.2-44.dev_arm64.deb
+Size: 2258092
+MD5sum: aa750b162ee18ce39ceba8fd1fdf4e17
+SHA1: 306cf34921e95332eca4d0aa3279688213e28c3a
+SHA256: ec056a9beb47a06f727fcc08dbea78a4e47ecd9643676c7e47e6692a8f409112
 Section: cnc
 Priority: optional
 Homepage: https://qtpyvcp.com
