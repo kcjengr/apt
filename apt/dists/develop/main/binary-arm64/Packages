@@ -25,16 +25,16 @@ Description: Hierarchical YAML Python Config
 
 Package: python3-monokrom
 Source: monokrom
-Version: 0.1.0-5.dev
+Version: 0.1.1-1.dev
 Architecture: arm64
 Maintainer: Joco <james@snaggingpixels.com>
 Installed-Size: 13263
 Depends: python3:any (>= 3.7~), python3-setuptools, python3-yaml, python3-pyqt5, python3-dbus.mainloop.pyqt5, python3-pyqt5.qtopengl, python3-pyqt5.qsci, python3-serial, python3-docopt, python3-qtpy, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qttools5-dev-tools
-Filename: pool/main/bookworm-dev/python3-monokrom_0.1.0-5.dev_arm64.deb
-Size: 2196656
-MD5sum: a4ee0a1f20e8fd1f9a62355c4e0831eb
-SHA1: 2759d332ce4e9843022b666cfd54252258547e54
-SHA256: 3579f876a7add36a5462d8b58bbd41ffc77f276a026abfc3c133bd976848d068
+Filename: pool/main/bookworm-dev/python3-monokrom_0.1.1-1.dev_arm64.deb
+Size: 2195780
+MD5sum: 178a7fe4585d8c972859902c8f85c1be
+SHA1: 315af5e8bd5a13bd8b4f1c1d9511051a3af061da
+SHA256: 5abb4f714b6659ac62f37a9876626c4e2276c3f30d0aa719e46cdd1f3c4eb3df
 Section: cnc
 Priority: optional
 Homepage: https://qtpyvcp.com
