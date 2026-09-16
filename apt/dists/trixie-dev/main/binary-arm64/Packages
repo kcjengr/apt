@@ -17,16 +17,16 @@ Description: Monochrome style VCPs for LinuxCNC controlled Plasma cutters.
 
 Package: python3-probe-basic
 Source: probe-basic
-Version: 1.0.2-32.dev
+Version: 1.0.2-33.dev
 Architecture: arm64
 Maintainer: Kcjengr <kcjengr@gmail.com>
-Installed-Size: 65463
+Installed-Size: 65462
 Depends: python3-qtpy, python3:any (>= 3.7~), python3-setuptools, python3-qtpyvcp, qml6-module-qtquick-controls, qml6-module-qtquick-layouts, qml6-module-qtquick, python3-yaml, python3-pyside6.qtcore, python3-pyside6.qtdbus, python3-pyside6.qtopengl, python3-pyside6.qtwidgets, python3-pyside6.qtquick, pyside6-tools, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval, qmlscene
-Filename: pool/main/trixie-dev/python3-probe-basic_1.0.2-32.dev_arm64.deb
-Size: 19496312
-MD5sum: 2840e4ba0ba40db6509b4fd7475302be
-SHA1: c58728c0310419e688307c7f5cb1f73b1812769f
-SHA256: 064c98f83e8b5c72bdac8733cb338ef8809fe74f562484ffac1318eda1941ae9
+Filename: pool/main/trixie-dev/python3-probe-basic_1.0.2-33.dev_arm64.deb
+Size: 19476764
+MD5sum: 0a73d72020eec743911da2cd8b5a4f76
+SHA1: 175335266cf6eb5cc990bf92debbd5aad6360285
+SHA256: b34ce4c8df277aaa60d65f7b465785732eecf415b1b9a767af273183ca4f6ca7
 Section: cnc
 Priority: optional
 Homepage: https://github.com/kcjengr/probe-basic
